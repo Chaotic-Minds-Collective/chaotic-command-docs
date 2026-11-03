@@ -10,8 +10,9 @@ This page records the verified implementation baseline and outstanding engineeri
 
 - Repository: [Chaotic-Minds-Collective/Chaotic-Command](https://github.com/Chaotic-Minds-Collective/Chaotic-Command)
 - Branch: `main`
-- Latest inspected commit: `499bf58e673e2166d32e027579585d90a03fb0e4`
-- Latest merged pull request in this audit: [PR #15](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/15)
+- Audit checked: November 3, 2026.
+- Latest inspected commit: [`011b06f7344cc5c05851e92475fc889f199f175a`](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/commit/011b06f7344cc5c05851e92475fc889f199f175a)
+- Latest merged pull request in this audit: [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17), merged November 1, 2026.
 - Runtime target: Node.js 24 or newer.
 - Active app: dependency-free Node.js server, vanilla browser client, and native SQLite.
 - Preserved workspace: React/TypeScript Bit components and GuildPilot prototype under `design/` and `guildpilot/`.
@@ -25,11 +26,13 @@ This page records the verified implementation baseline and outstanding engineeri
 | #13 | Customer-owned bot acceptance runbook |
 | #14 | Preview binding to bot identity and permission context |
 | #15 | SQLite persistence and encrypted credential recovery tests |
+| #17 | Public homepage at `/`, command workspace at `/command`, OAuth return-route updates, and route tests |
 
-PR #15 records 36 passing tests on Node.js v24.22.1. GitHub Actions run #154 for the current main commit passed the Node.js 24 syntax checks and full test suite. Homepage PR #17 runs #167 and #168 passed the same checks. All of these are automated tests using fixtures and mocked Discord responses, not live Discord acceptance.
+The earlier PR #15 verification record reports 36 passing tests on Node.js v24.22.1. Homepage PR #17 records passing Node.js 24 syntax checks and the offline test suite in GitHub Actions runs #167 and #168 on commit `99abd252c04b2a10ca3456fa3abe1b95246738e2`. These are historical automated results using fixtures and mocked Discord responses, not a fresh test run against the latest inspected commit or live Discord acceptance. This documentation audit did not rerun the application tests.
 
 ## Implemented application capabilities
 
+- Public product homepage at `/` and the command workspace at `/command`; OAuth completion returns to the workspace.
 - Discord OAuth sign-in and manageable-server listing.
 - Optional shared bot and up to five customer-owned bots per account.
 - Encrypted bot credentials and account-scoped bot assignments.
@@ -55,13 +58,15 @@ PR #15 records 36 passing tests on Node.js v24.22.1. GitHub Actions run #154 for
 - Live Discord acceptance and browser visual/accessibility tests remain outstanding.
 - The preserved Bit/React workspace has not been established as part of the standalone runtime build.
 
-## Branch review note
+## Homepage merge and deployment status
 
-The application repository still contains the older `website/rebuild-foundation` branch. It has five commits ahead of and five commits behind `main`, and it is not merged. Do not merge it blindly. Its homepage work has been ported to a fresh main-based branch, `feature/public-homepage-mainline`, in draft [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17). The PR keeps the command workspace at `/command`, corrects marketing claims to match the current MVP, and adds route tests. GitHub Actions runs #167 and #168 both passed on commit `99abd252c04b2a10ca3456fa3abe1b95246738e2`. PR #17 remains unmerged and undeployed.
+[PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17) merged on November 1, 2026, in commit `50bcdcd04e91d5d6006585e706d7a94afa3fa194`. It ports the public homepage work from `website/rebuild-foundation` onto the current mainline, preserves the command workspace at `/command`, and updates the OAuth return route and route tests. The homepage work is included in `main`; PR #17 is no longer a draft awaiting review.
+
+The inspected branch tip is `011b06f7344cc5c05851e92475fc889f199f175a`, after the November 2 CNAME changes. A source merge or domain-file change is not proof of a working production deployment. The production application URL, deployed revision, and live Discord acceptance were not verified in this documentation audit.
 
 ## Next milestones
 
-1. Review draft PR #17 after owner approval. Its Node.js 24 syntax checks and full automated test suite have passed in GitHub Actions.
+1. Verify the production application URL and deployed revision after any owner-approved deployment. Record deployment evidence separately from PR #17's completed merge and historical CI results.
 2. Complete live OAuth, bot installation, permission, audit, preview, and apply acceptance in a disposable Discord server.
 3. Add browser visual and accessibility coverage.
 4. Define a consistent SQLite backup and recovery procedure.

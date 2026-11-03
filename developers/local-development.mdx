@@ -58,7 +58,7 @@ Or start it without watch mode:
 npm start
 ```
 
-Open `http://localhost:3000`. Without OAuth configuration, the application serves its interface but disables sign-in.
+Open `http://localhost:3000` for the public product homepage. Open `http://localhost:3000/command` for the command workspace. OAuth completion returns to `/command`. Without OAuth configuration, the workspace explains the missing configuration and disables sign-in. These routes are documented in the [application README](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/blob/main/README.md).
 
 ## Run checks
 
@@ -78,7 +78,7 @@ The test script uses Node's built-in test runner and discovers `apps/command/tes
 
 ## What the tests cover
 
-The suite uses mocked Discord responses, in-memory or temporary SQLite databases, and loopback HTTP. It covers application routes, OAuth state and session behavior, account isolation, bot credential encryption, setup previews, apply safeguards, audit behavior, persistence across restart, clean-shutdown database-copy recovery, and failure handling for mismatched or corrupted encrypted data.
+The suite uses mocked Discord responses, in-memory or temporary SQLite databases, and loopback HTTP. It covers application routes, OAuth state and session behavior, account isolation, bot credential encryption, setup previews, apply safeguards, audit, persistence across restart, clean-shutdown database-copy recovery, and failure handling for mismatched or corrupted encrypted data.
 
 The tests do not use real Discord credentials or write to a live Discord server.
 
