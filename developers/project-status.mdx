@@ -10,8 +10,8 @@ This page records the verified implementation baseline and outstanding engineeri
 
 - Repository: [Chaotic-Minds-Collective/Chaotic-Command](https://github.com/Chaotic-Minds-Collective/Chaotic-Command)
 - Branch: `main`
-- Latest inspected commit: `499bf58e673e2166d32e027579585d90a03fb0e4`
-- Latest merged pull request in this audit: [PR #15](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/15)
+- Latest inspected commit: [`011b06f7344cc5c05851e92475fc889f199f175a`](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/commit/011b06f7344cc5c05851e92475fc889f199f175a), checked November 3, 2026 (UTC).
+- Latest verified merged product pull request: [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17), merged November 1, 2026 at 05:00 UTC.
 - Runtime target: Node.js 24 or newer.
 - Active app: dependency-free Node.js server, vanilla browser client, and native SQLite.
 - Preserved workspace: React/TypeScript Bit components and GuildPilot prototype under `design/` and `guildpilot/`.
@@ -25,11 +25,17 @@ This page records the verified implementation baseline and outstanding engineeri
 | #13 | Customer-owned bot acceptance runbook |
 | #14 | Preview binding to bot identity and permission context |
 | #15 | SQLite persistence and encrypted credential recovery tests |
+| #17 | Public product homepage, separate `/command` workspace, and route tests |
 
-PR #15 records 36 passing tests on Node.js v24.22.1. GitHub Actions run #154 for the current main commit passed the Node.js 24 syntax checks and full test suite. Homepage PR #17 runs #167 and #168 passed the same checks. All of these are automated tests using fixtures and mocked Discord responses, not live Discord acceptance.
+PR #15 recorded 36 passing tests on Node.js v24.22.1. Homepage PR #17 runs #167 and #168 also recorded passing Node.js 24 checks. These are historical automated verification records, not live Discord acceptance.
+
+For the inspected `main` commit, the [Node.js 24 checks job](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/actions/runs/41504068858/job/125478689802) passed on November 2, 2026. A separate [build job](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/actions/runs/41504068290/job/125478697988) failed, and its deployment job was skipped. Passing the runtime checks is not evidence of a successful production build or deployment. The failure cause and intended deployment target still need review.
+
+The automated application tests use fixtures and mocked Discord responses. No application tests, production deployment, or live Discord acceptance were performed as part of this documentation refresh.
 
 ## Implemented application capabilities
 
+- Public product homepage at `/` and a separate command workspace at `/command`, with OAuth returning users to the workspace.
 - Discord OAuth sign-in and manageable-server listing.
 - Optional shared bot and up to five customer-owned bots per account.
 - Encrypted bot credentials and account-scoped bot assignments.
@@ -55,13 +61,17 @@ PR #15 records 36 passing tests on Node.js v24.22.1. GitHub Actions run #154 for
 - Live Discord acceptance and browser visual/accessibility tests remain outstanding.
 - The preserved Bit/React workspace has not been established as part of the standalone runtime build.
 
-## Branch review note
+## Homepage merge and branch review
 
-The application repository still contains the older `website/rebuild-foundation` branch. It has five commits ahead of and five commits behind `main`, and it is not merged. Do not merge it blindly. Its homepage work has been ported to a fresh main-based branch, `feature/public-homepage-mainline`, in draft [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17). The PR keeps the command workspace at `/command`, corrects marketing claims to match the current MVP, and adds route tests. GitHub Actions runs #167 and #168 both passed on commit `99abd252c04b2a10ca3456fa3abe1b95246738e2`. PR #17 remains unmerged and undeployed.
+[PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17) merged on November 1, 2026 at 05:00 UTC as commit `50bcdcd04e91d5d6006585e706d7a94afa3fa194`. It adds the public homepage at `/`, keeps the command workspace at `/command`, routes OAuth completion back to that workspace, and adds offline route coverage. The product copy describes the existing MVP and labels the dashboard artwork as illustrative.
+
+The homepage work was ported from the older `website/rebuild-foundation` branch through `feature/public-homepage-mainline`. Do not use the older branch as the current source baseline or merge it blindly; use the inspected `main` commit above.
+
+The PR is no longer awaiting review or merge. Its merge does not establish successful production deployment or live Discord acceptance. Verify the intended host, application origin, and OAuth callback before any public rollout.
 
 ## Next milestones
 
-1. Review draft PR #17 after owner approval. Its Node.js 24 syntax checks and full automated test suite have passed in GitHub Actions.
+1. Review the separate build failure and intended deployment target. Before any rollout, verify the public homepage at `/`, the workspace at `/command`, and OAuth returning to the workspace.
 2. Complete live OAuth, bot installation, permission, audit, preview, and apply acceptance in a disposable Discord server.
 3. Add browser visual and accessibility coverage.
 4. Define a consistent SQLite backup and recovery procedure.
