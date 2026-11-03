@@ -8,16 +8,17 @@ This changelog records functionality and engineering changes merged into the Cha
 
 ## November 1, 2026
 
-### Public homepage and command workspace
+### Public product homepage and command workspace
 
-Merged in [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17), commit `50bcdcd04e91d5d6006585e706d7a94afa3fa194`.
+Merged in [PR #17](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/pull/17) as commit `50bcdcd04e91d5d6006585e706d7a94afa3fa194`.
 
-- Add the public product homepage at `/`, with copy that describes the implemented MVP and its limits.
-- Preserve the command workspace at `/command` and return users there after OAuth sign-in.
-- Add the responsive homepage stylesheet without external font or script dependencies.
-- Extend offline route coverage for the homepage, stylesheet, command workspace, application assets, and OAuth return path.
+- Add a public product homepage at `/` with copy that describes the current MVP rather than planned capabilities.
+- Keep the command workspace at `/command` and return users there after Discord OAuth sign-in.
+- Add responsive local homepage styling without external font or script dependencies.
+- Label the dashboard artwork as illustrative rather than live account data.
+- Add offline tests for the homepage, stylesheet, workspace route, app assets, and OAuth redirect.
 
-This entry records a merged source change, not confirmation of a production deployment or live Discord acceptance. See [project status and next milestones](/developers/project-status) for the inspected baseline and remaining verification work.
+This is a merged source change, not confirmation of production deployment or live Discord acceptance. It does not change Discord API permissions, authentication ownership, SQLite storage, credential encryption, preview binding, or apply safeguards. See [project status and next milestones](/developers/project-status) for the current verification and deployment limits.
 
 ## October 30, 2026
 
@@ -66,8 +67,8 @@ The change also adds offline coverage for clean-shutdown recovery and fail-close
 
 The current application includes:
 
-- Public product homepage at `/` and the command workspace at `/command`, with OAuth completion returning to the workspace.
-- Discord sign-in and sign-out.
+- Public product homepage at `/` and a separate command workspace at `/command`.
+- Discord sign-in and sign-out, with OAuth returning users to the command workspace.
 - Server listing limited to users with Manage Server or Administrator permission.
 - Customer-owned bot connections, encrypted token storage, a default bot, and per-server bot assignments.
 - Optional operator-configured shared bot support.
@@ -101,7 +102,7 @@ The current application includes:
 
 The application does not yet create new Discord guilds, perform full existing-server reorganization, run moderation or ticket workflows, configure private-channel policies, or run long-lived automations. See [current feature status](/reference/feature-status) for the complete scope.
 
-The original Bit/React design workspace remains preserved separately from the active Node.js runtime. The public homepage work ported from `website/rebuild-foundation` is included in `main` through PR #17; this does not make the preserved component workspace part of the active runtime build.
+The original Bit/React design workspace remains preserved separately from the active Node.js runtime. The public homepage work was ported from `website/rebuild-foundation` to a main-based branch and merged through PR #17. Use the inspected `main` baseline in the [project status](/developers/project-status), not the older branch, to determine current behavior.
 
 ## Keeping this history current
 

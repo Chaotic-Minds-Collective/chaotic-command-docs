@@ -58,7 +58,7 @@ Or start it without watch mode:
 npm start
 ```
 
-Open `http://localhost:3000` for the public product homepage. Open `http://localhost:3000/command` for the command workspace. OAuth completion returns to `/command`. Without OAuth configuration, the workspace explains the missing configuration and disables sign-in. These routes are documented in the [application README](https://github.com/Chaotic-Minds-Collective/Chaotic-Command/blob/main/README.md).
+Open `http://localhost:3000` for the public product homepage. Open `http://localhost:3000/command` for the command workspace. Without OAuth configuration, the workspace explains the missing configuration and safely disables sign-in. OAuth completion returns signed-in users to `/command`; the callback URL remains `http://localhost:3000/auth/callback` for this local origin.
 
 ## Run checks
 
