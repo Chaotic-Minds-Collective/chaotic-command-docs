@@ -1,4 +1,4 @@
-# Chaotic Minds Command Documentation
+# Chaotic Minds Command documentation
 
 Product documentation for **Chaotic Minds Command (CC)**.
 
