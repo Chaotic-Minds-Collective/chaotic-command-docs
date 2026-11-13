@@ -1,15 +1,15 @@
 ---
 title: "Connect your own Discord bot"
-description: "Create a Discord bot you control, connect it securely to Chaotic Command, assign it to servers, and use it for setup."
+description: "Create a Discord bot you control, connect it securely to Chaotic Minds Command, assign it to servers, and use it for setup."
 keywords: ["bring your own bot", "BYOB", "Discord bot token", "connect bot", "install bot", "bot permissions"]
 ---
 
-Chaotic Command supports customer-owned Discord bots. You create and control the bot in the Discord Developer Portal, connect its bot token to your Chaotic Command account, and choose which servers use it.
+Chaotic Minds Command supports customer-owned Discord bots. You create and control the bot in the Discord Developer Portal, connect its bot token to your Chaotic Minds Command account, and choose which servers use it.
 
-You still sign in to Chaotic Command with the normal **Sign in with Discord** button. Your personal bot does not need its own OAuth client secret or redirect URL.
+You still sign in to Chaotic Minds Command with the normal **Sign in with Discord** button. Your personal bot does not need its own OAuth client secret or redirect URL.
 
 <Warning>
-  Treat a bot token like a password. Only enter it in the HTTPS Chaotic Command bot-connection form. Never send it to support, paste it into chat, commit it to Git, or include it in screenshots. If it is exposed, reset it in the Discord Developer Portal.
+  Treat a bot token like a password. Only enter it in the HTTPS Chaotic Minds Command bot-connection form. Never send it to support, paste it into chat, commit it to Git, or include it in screenshots. If it is exposed, reset it in the Discord Developer Portal.
 </Warning>
 
 ## Before you begin
@@ -18,10 +18,10 @@ You need:
 
 - A Discord account that can manage the server you want to configure.
 - Permission to create an application in the [Discord Developer Portal](https://discord.com/developers/applications).
-- Access to Chaotic Command over HTTPS.
+- Access to Chaotic Minds Command over HTTPS.
 - A bot application that you control.
 
-You can connect up to five personal bots to your Chaotic Command account.
+You can connect up to five personal bots to your Chaotic Minds Command account.
 
 ## 1. Create your bot in Discord
 
@@ -36,17 +36,17 @@ You can connect up to five personal bots to your Chaotic Command account.
     Select **Bot** in the application settings. Add a bot user if Discord has not already created one.
   </Step>
   <Step title="Generate a bot token">
-    Use the token controls to reveal or reset the bot token. Copy it somewhere private temporarily so you can paste it into Chaotic Command.
+    Use the token controls to reveal or reset the bot token. Copy it somewhere private temporarily so you can paste it into Chaotic Minds Command.
   </Step>
 </Steps>
 
 You need the **bot token** from the Bot page. Do not use the Application ID, Public Key, Client Secret, or an OAuth authorization code.
 
-You do not need to configure an OAuth redirect URL for this personal bot. Chaotic Command's own Discord application handles user sign-in.
+You do not need to configure an OAuth redirect URL for this personal bot. Chaotic Minds Command's own Discord application handles user sign-in.
 
-## 2. Sign in to Chaotic Command
+## 2. Sign in to Chaotic Minds Command
 
-1. Open Chaotic Command over HTTPS.
+1. Open Chaotic Minds Command over HTTPS.
 2. Select **Sign in with Discord**.
 3. Authorize the requested account identity and server-list access.
 4. Wait for your manageable servers to load.
@@ -58,9 +58,9 @@ This sign-in connects your Discord user account. Connecting a personal bot is a 
 1. Find **Your Discord bots**.
 2. Paste the token into **Discord bot token**.
 3. Select **Verify and connect bot**.
-4. Wait while Chaotic Command checks the token with Discord.
+4. Wait while Chaotic Minds Command checks the token with Discord.
 
-When verification succeeds, Chaotic Command saves the bot credential encrypted and selects the bot as your default. The token is not shown again in the bot list or returned in the API response.
+When verification succeeds, Chaotic Minds Command saves the bot credential encrypted and selects the bot as your default. The token is not shown again in the bot list or returned in the API response.
 
 If verification fails, confirm that you copied the bot token from the application's **Bot** page. Do not try an application ID, public key, or client secret.
 
@@ -72,17 +72,17 @@ If verification fails, confirm that you copied the bot token from the applicatio
 4. Select **Install bot in selected server**.
 5. Review Discord's authorization screen and complete installation.
 
-Chaotic Command requests only:
+Chaotic Minds Command requests only:
 
 - **Manage Channels**
 - **Manage Roles**
 
 The bot does not need **Administrator**. Do not grant Administrator as a workaround if readiness fails.
 
-After installation, make sure the bot's role is high enough in the server's role hierarchy to manage the roles required by your setup. Return to Chaotic Command, select the server again, and confirm the bot is ready.
+After installation, make sure the bot's role is high enough in the server's role hierarchy to manage the roles required by your setup. Return to Chaotic Minds Command, select the server again, and confirm the bot is ready.
 
 <Info>
-  The bot must be installed in a server before Chaotic Command can audit or configure that server with it.
+  The bot must be installed in a server before Chaotic Minds Command can audit or configure that server with it.
 </Info>
 
 ## 5. Use different bots for different servers
@@ -121,22 +121,22 @@ See [preview and review a setup](/guides/preview-and-review), [apply a setup](/g
 
 ## 7. Remove or replace a connected bot
 
-To remove a personal bot from your Chaotic Command account:
+To remove a personal bot from your Chaotic Minds Command account:
 
 1. Select the bot in **Your Discord bots**.
 2. Select **Remove selected personal bot**.
 3. Confirm the removal.
 
-This deletes the stored credential and that account's server assignments from Chaotic Command. It does not revoke the token at Discord, delete the Discord application, or remove the bot from Discord servers.
+This deletes the stored credential and that account's server assignments from Chaotic Minds Command. It does not revoke the token at Discord, delete the Discord application, or remove the bot from Discord servers.
 
 To replace a token:
 
 1. Reset the token in the Discord Developer Portal.
-2. Remove the old personal bot connection in Chaotic Command.
+2. Remove the old personal bot connection in Chaotic Minds Command.
 3. Connect the bot again using the new token.
 4. Reinstall or reauthorize the bot in servers if Discord requires it.
 
-If a token may have been exposed, reset it at Discord immediately. Removing it from Chaotic Command alone does not invalidate a copied token.
+If a token may have been exposed, reset it at Discord immediately. Removing it from Chaotic Minds Command alone does not invalidate a copied token.
 
 ## Troubleshooting
 
@@ -156,16 +156,16 @@ Select the server, select the intended personal bot, and use **Install bot in se
 
 Check that the selected bot has **Manage Channels** and **Manage Roles** in that server. Review its role position and hierarchy. Do not grant Administrator.
 
-### Chaotic Command uses the wrong bot
+### Chaotic Minds Command uses the wrong bot
 
 Select the server, choose the intended bot, and select **Use selected bot**. A server-specific assignment overrides the default bot.
 
 ### I removed a bot but it is still in my Discord server
 
-Removing a connection only deletes the credential stored by Chaotic Command and its account-owned assignments. Remove the bot from the Discord server separately if you no longer want it there.
+Removing a connection only deletes the credential stored by Chaotic Minds Command and its account-owned assignments. Remove the bot from the Discord server separately if you no longer want it there.
 
 ## How your bot credential is handled
 
-Chaotic Command verifies the token with Discord, then stores it encrypted at rest using AES-256-GCM. The bot list returns bot identity information, not the token. Personal bot records and server assignments are scoped to your signed-in Discord account.
+Chaotic Minds Command verifies the token with Discord, then stores it encrypted at rest using AES-256-GCM. The bot list returns bot identity information, not the token. Personal bot records and server assignments are scoped to your signed-in Discord account.
 
-Only connect bots through the HTTPS Chaotic Command site. Keep control of your Discord application and reset its token in the Developer Portal if you suspect exposure.
+Only connect bots through the HTTPS Chaotic Minds Command site. Keep control of your Discord application and reset its token in the Developer Portal if you suspect exposure.

@@ -3,7 +3,7 @@
 Product documentation for **Chaotic Minds Command (CC)**.
 
 
-This repository contains the Mintlify documentation for Chaotic Command.
+This repository contains the Mintlify documentation for Chaotic Minds Command (CC).
 
 **Published site:** https://chaoticcommand.mintlify.site/index
 

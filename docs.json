@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Chaotic Command",
-  "description": "Guides for setting up and managing Discord servers with Chaotic Command. Learn the workflow, permissions, safety checks, and current features.",
+  "name": "Chaotic Minds Command",
+  "description": "Guides for setting up and managing Discord servers with Chaotic Minds Command. Learn the workflow, permissions, safety checks, and current features.",
   "colors": {
     "primary": "#00CFC1",
     "light": "#42E3D7",
@@ -19,7 +19,7 @@
         ]
       },
       {
-        "group": "Using Chaotic Command",
+        "group": "Using Chaotic Minds Command",
         "icon": "workflow",
         "pages": [
           "guides/choose-server-template",
