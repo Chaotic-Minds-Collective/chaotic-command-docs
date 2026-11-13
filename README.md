@@ -1,4 +1,7 @@
-# Chaotic Command documentation
+# Chaotic Minds Command documentation
+
+Product documentation for **Chaotic Minds Command (CC)**.
+
 
 This repository contains the Mintlify documentation for Chaotic Command.
 
